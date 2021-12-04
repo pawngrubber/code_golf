@@ -1,7 +1,6 @@
 h=d=a=0
-z=[(int(l[-2]),*{'u':(-1,0),'d':(1,0),'f':(0,1)}[l[0]])for l in open('data.txt')]
-for v,u,f in z:
- h+=v*f
- d+=v*f*a
- a+=v*u
+for l in open('data.txt'):
+ v=int(l[-2])
+ u,f={'u':(-v,0),'d':(v,0),'f':(0,v)}[l[0]]
+ h,d,a=h+f,d+f*a,a+u
 print(h*d)
